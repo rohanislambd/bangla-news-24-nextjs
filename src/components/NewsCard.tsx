@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import React from 'react';
 import { News } from './MainNews';
+import Link from 'next/link';
 
 
 
 const NewsCard = ({news}:{news:News}) => {
     return (
-        <div>
+        <Link href={`/news/${news.id}`}>
             <div className="card bg-base-100  shadow-sm ">
                     <figure>
                       <Image
@@ -25,8 +26,8 @@ const NewsCard = ({news}:{news:News}) => {
                       </p>
                      
                     </div>
-                  </div>
-        </div>
+            </div>
+        </Link>
     );
 };
 
