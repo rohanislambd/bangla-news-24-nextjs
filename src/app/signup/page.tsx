@@ -34,6 +34,14 @@ const SignUpPage = () => {
     console.log(data);
    }
 
+     const handleGithubSignIn = async () =>{
+    const data = await signIn.social({
+      provider: 'github'
+    })
+    console.log(data);
+  }
+
+
   return (
     <div className="max-w-7xl mx-auto flex flex-col justify-center items-center mt-5">
         <h2 className="text-2xl font-bold text-red-500">সাইন আপ</h2>
@@ -79,6 +87,7 @@ const SignUpPage = () => {
         </fieldset>
       </form>
       <button onClick={handleGoogleSignUp} className="btn">Sign Up With Google</button>
+      <button onClick={handleGithubSignIn} className="btn">Sign in With Github</button>
     </div>
   );
 };
