@@ -12,7 +12,7 @@ const Marquee = async () => {
 
   const data = await res.json();
   const headlines: Headlines[] = data.data;
-  console.log(headlines);
+//   console.log(headlines);
 
   return (
     <div className="bg-red-700 text-white">
