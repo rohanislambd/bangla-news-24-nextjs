@@ -1,6 +1,7 @@
 "use client";
 import { signOut, useSession } from "@/lib/auth-client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const UserInfo = () => {
@@ -34,8 +35,12 @@ const UserInfo = () => {
         </div>
       ) : (
         <div className="">
-          <button className="btn">সাইন ইন</button>
-          <button className="btn bg-red-500 text-white">সাইন আপ</button>
+          <Link href="/signin">
+              <button className="btn">সাইন ইন</button>
+          </Link>
+          <Link href="/signup">
+              <button className="btn bg-red-500 text-white">সাইন আপ</button>
+          </Link>
         </div>
       )}
     </div>

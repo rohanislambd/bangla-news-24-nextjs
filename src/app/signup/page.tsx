@@ -3,6 +3,7 @@
 import { signUp } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 import React from "react";
+import toast from "react-hot-toast";
 const SignUpPage = () => {
 
     const onSubmit = async (e: React.SubmitEvent<HTMLElement>
@@ -16,10 +17,13 @@ const SignUpPage = () => {
        callbackURL: '/',
      })
       if(data){
+          toast.success("Sing Up Successful")
           console.log(data);
           redirect("/")
       }
       if(error){
+         toast.error(error.message   ?? "Something went wrong")
+        
         console.log(error);
       }
     }
