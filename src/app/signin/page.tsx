@@ -26,6 +26,13 @@ const singInPage = () => {
       }
   }
 
+  const handleGoogleSignIn = async () =>{
+    const data = await signIn.social({
+       provider: 'google',
+    })
+    console.log(data);
+  }
+
 
   return (
     <div className="max-w-7xl mx-auto flex flex-col justify-center items-center mt-5">
@@ -54,6 +61,7 @@ const singInPage = () => {
           </button>
         </fieldset>
       </form>
+      <button onClick={handleGoogleSignIn} className="btn">Sign in With Google</button>
     </div>
   );
 };

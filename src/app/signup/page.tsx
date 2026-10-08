@@ -1,6 +1,6 @@
 "use client"
 
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
@@ -27,7 +27,12 @@ const SignUpPage = () => {
         console.log(error);
       }
     }
-
+   const handleGoogleSignUp = async () =>{
+    const data = await signIn.social({
+      provider: 'google',
+    })
+    console.log(data);
+   }
 
   return (
     <div className="max-w-7xl mx-auto flex flex-col justify-center items-center mt-5">
@@ -73,6 +78,7 @@ const SignUpPage = () => {
           </button>
         </fieldset>
       </form>
+      <button onClick={handleGoogleSignUp} className="btn">Sign Up With Google</button>
     </div>
   );
 };
