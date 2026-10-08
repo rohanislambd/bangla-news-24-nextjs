@@ -1,5 +1,6 @@
 import MainNews from "@/components/MainNews";
 import Marquee from "@/components/Marquee";
+import MostRead from "@/components/MostRead";
 import NewsCard from "@/components/NewsCard";
 
 interface IOtherSection {
@@ -30,7 +31,7 @@ export default async function Home() {
     <div>
       <Marquee></Marquee>
 
-      <div className="grid grid-cols-3 max-w-7xl mx-auto gap-3 mt-6">
+      <div className="grid grid-cols-3 max-w-7xl mx-auto gap-5 mt-6">
         {/* news section */}
          <div className="col-span-2">
               <MainNews news={mainNews}/>
@@ -49,8 +50,8 @@ export default async function Home() {
              </div>
          </div>
           {/*most read section  */}
-          <div className="bg-green-400 col-span-1">
-
+          <div className=" col-span-1 ">
+              <MostRead/>
           </div>
       </div>
     </div>
