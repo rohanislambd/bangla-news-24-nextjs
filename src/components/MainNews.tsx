@@ -1,5 +1,5 @@
 import Image from "next/image";
-interface News {
+export interface News {
     id: string;
     title: string;
     description: string;
